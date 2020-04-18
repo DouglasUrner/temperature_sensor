@@ -29,5 +29,5 @@ def read_temp():
 	
 while True:
 	raw, deg_c, deg_f = read_temp()
-	print(raw)
+	print(raw, deg_c, deg_f)
 	time.sleep(1)
