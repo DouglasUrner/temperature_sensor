@@ -28,5 +28,6 @@ def read_temp():
         return temp_raw, temp_c, temp_f
 	
 while True:
-	print(read_temp())	
+	temps = read_temp()
+	print(temps)
 	time.sleep(1)
