@@ -1,6 +1,15 @@
 import os
 import glob
 import time
+
+class TempSensor:
+    def __init__(self, type, id):
+        self.type = type    # Type of the device - driver to use.
+        self.id = id        # Serial number of the device, if available.   
+        label = ''          # Short description of device.
+        info = ''           # Long description of device.
+        offset_0 = 0        # Calibration offset from 0 degrees C (ice water).
+        offset_100 = 0      # Calibration offset from 100 degrees C (boiling water at sea level).
  
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
@@ -30,4 +39,4 @@ def read_temp():
 while True:
 	raw, deg_c, deg_f = read_temp()
 	print(raw, deg_c, deg_f)
-	time.sleep(1)
+	time.sleep(1
